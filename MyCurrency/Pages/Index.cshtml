@@ -1,0 +1,129 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<section class="col-10 main-section">
+    <h2 class="title-page">Calcule a cotação do real em relação as outras moedas em tempo real.</h2>
+    <br />
+    <p class="date-quotation">(@DateTime.Now.ToString("dd/MM/yyyy"))</p>
+
+    <br />
+
+    <div class="inputs-quotation col-6">
+        <div class="row" title="Cotação do dólar - @DateTime.Now.ToString("dd/MM/yyyy")">
+            <div class="form-group col-12">
+                <label>Dólar</label>
+                <div class="inputs-box">
+                    <div class="input-group-prepend"><div class="input-group-text">R$</div></div>
+                    <input class="form-control" placeholder="Real" value="@string.Format("{0:0.00}", Model.Quotation.Dollar.QuoteInReais)" readonly />
+
+                    <span class="equals">=</span>
+
+                    <div class="input-group-prepend"><div class="input-group-text">$</div></div>
+                    <input class="form-control" placeholder="Dolar" readonly value="@Model.Quotation.Dollar.AmountOfReais" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row" title="Cotação do euro - @DateTime.Now.ToString("dd/MM/yyyy")">
+            <div class="form-group col-12">
+                <label>Euro</label>
+                <div class="inputs-box">
+                    <div class="input-group-prepend"><div class="input-group-text">R$</div></div>
+                    <input class="form-control" placeholder="Real" value="@string.Format("{0:0.00}", Model.Quotation.Euro.QuoteInReais)" readonly />
+
+                    <span class="equals">=</span>
+
+                    <div class="input-group-prepend"><div class="input-group-text">€</div></div>
+                    <input class="form-control" placeholder="Euro" value="@Model.Quotation.Euro.AmountOfReais" readonly />
+                </div>
+            </div>
+        </div>
+
+        <div class="row" title="Cotação da libra esterlina - @DateTime.Now.ToString("dd/MM/yyyy")">
+            <div class="form-group col-12">
+                <label>Libra Esterlina</label>
+                <div class="inputs-box">
+                    <div class="input-group-prepend"><div class="input-group-text">R$</div></div>
+                    <input class="form-control" placeholder="Real" value="@string.Format("{0:0.00}", Model.Quotation.PoundSterling.QuoteInReais)" readonly />
+
+                    <span class="equals">=</span>
+
+                    <div class="input-group-prepend"><div class="input-group-text">£</div></div>
+                    <input class="form-control" placeholder="Libra" value="@Model.Quotation.PoundSterling.AmountOfReais" readonly />
+                </div>
+            </div>
+        </div>
+
+        <div class="row" title="Cotação do iene - @DateTime.Now.ToString("dd/MM/yyyy")">
+            <div class="form-group col-12">
+                <label>Iene</label>
+                <div class="inputs-box">
+                    <div class="input-group-prepend"><div class="input-group-text">R$</div></div>
+                    <input class="form-control" placeholder="Real" value="@string.Format("{0:0.00}", Model.Quotation.Yen.QuoteInReais)" readonly />
+
+                    <span class="equals">=</span>
+
+                    <div class="input-group-prepend"><div class="input-group-text">¥</div></div>
+                    <input class="form-control" placeholder="Iene" value="@Model.Quotation.Yen.AmountOfReais" readonly />
+                </div>
+            </div>
+        </div>
+
+        <div class="row" title="Cotação do franco suiço - @DateTime.Now.ToString("dd/MM/yyyy")">
+            <div class="form-group col-12">
+                <label>Franco Suiço</label>
+                <div class="inputs-box">
+                    <div class="input-group-prepend"><div class="input-group-text">R$</div></div>
+                    <input class="form-control" placeholder="Real" value="@string.Format("{0:0.00}", Model.Quotation.SwissFranc.QuoteInReais)" readonly />
+
+                    <span class="equals">=</span>
+
+                    <div class="input-group-prepend"><div class="input-group-text">A</div></div>
+                    <input class="form-control" placeholder="Franco Suiço" value="@Model.Quotation.SwissFranc.AmountOfReais" readonly />
+                </div>
+            </div>
+        </div>
+
+        <div class="row" title="Cotação do peso argentino - @DateTime.Now.ToString("dd/MM/yyyy")">
+            <div class="form-group col-12">
+                <label>Peso Argentino</label>
+                <div class="inputs-box">
+                    <div class="input-group-prepend"><div class="input-group-text">R$</div></div>
+                    <input class="form-control" placeholder="Real" value="@string.Format("{0:0.00}", Model.Quotation.ArgentinianPeso.QuoteInReais)" readonly />
+
+                    <span class="equals">=</span>
+
+                    <div class="input-group-prepend"><div class="input-group-text">S</div></div>
+                    <input class="form-control" placeholder="Peso Argentino" value="@Model.Quotation.ArgentinianPeso.AmountOfReais" readonly />
+                </div>
+            </div>
+        </div>
+
+        <div class="row" title="Cotação do peso bitcoin - @DateTime.Now.ToString("dd/MM/yyyy")">
+            <div class="form-group col-12">
+                <label>Bitcoin</label>
+                <div class="inputs-box">
+                    <div class="input-group-prepend"><div class="input-group-text">R$</div></div>
+                    <input class="form-control" placeholder="Real" value="@string.Format("{0:0.00}", Model.Quotation.Bitcoin.QuoteInReais)" readonly />
+
+                    <span class="equals">=</span>
+
+                    <div class="input-group-prepend"><div class="input-group-text">B</div></div>
+                    <input class="form-control" placeholder="Bitcoin" value="@Model.Quotation.Bitcoin.AmountOfReais" readonly />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <a class="reference-api" href="https://economia.awesomeapi.com.br/json/all">Fonte de dados</a>
+    </div>
+</section>
+
+
+<br />
+<br />
+<br />
